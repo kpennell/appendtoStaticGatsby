@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
+import Img from "gatsby-image"
 
 const CoursePage = ({ data }) => {
   const { markdownRemark: post } = data
@@ -10,6 +11,7 @@ const CoursePage = ({ data }) => {
     <Layout>
       <p>{post.frontmatter.title}</p>
        <p> {post.html}  </p>
+       <Img fluid={post.frontmatter.image.childImageSharp.fluid}  />
       />
     </Layout>
   )
