@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 
 
 
-class CoursesPage extends React.Component {
+class CoursePage extends React.Component {
 
   render() {
     const { data } = this.props
@@ -54,7 +54,7 @@ class CoursesPage extends React.Component {
 export default () => (
   <StaticQuery
     query={graphql`
-    query CoursesPageQuery {
+    query CoursePageQuery {
       allMarkdownRemark(
         sort: { order: DESC, fields: [frontmatter___date] },
         filter: { frontmatter: { templateKey: { eq: "single-course" } }}
@@ -79,7 +79,7 @@ export default () => (
     }
     `}
     render={(data) => (
-      <CoursesPage data={data} />
+      <CoursePage data={data} />
     )}
   />
 )
